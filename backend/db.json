@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "Notebook",
+      "price": 1999.99,
+      "id": 1
+    },
+    {
+      "name": "Geladeira",
+      "price": 2700,
+      "id": 2
+    },
+    {
+      "name": "Xbox One S",
+      "price": "1500",
+      "id": 3
+    }
+  ]
+}
