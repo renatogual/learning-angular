@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-title>Novo Produto</mat-card-title>
+  <mat-card-title>Editar Produto</mat-card-title>
   <form>
     <mat-form-field>
       <input
@@ -20,8 +20,8 @@
   </form>
 
   <div class="buttons">
-    <button mat-stroked-button (click)="goBack()">Voltar</button>
-    <button mat-raised-button (click)="createProduct()" class="purple">
+    <button mat-stroked-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button (click)="updateProduct()" class="purple">
       Salvar
     </button>
   </div>

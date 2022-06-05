@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -11,6 +13,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort'
 
 import { HttpClientModule } from '@angular/common/http'
 
@@ -23,7 +28,10 @@ import { NavComponent } from './components/template/nav/nav.component';
 import { HomeComponent } from './views/home/home.component';
 import { ProductsComponent } from './views/products/products.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
-import { ProductListComponent } from './components/product/product-list/product-list.component'
+import { ProductTableComponent } from './components/product/product-table/product-table.component';
+import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -34,7 +42,8 @@ import { ProductListComponent } from './components/product/product-list/product-
     HomeComponent,
     ProductsComponent,
     ProductCreateComponent,
-    ProductListComponent
+    ProductTableComponent,
+    ProductUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +58,15 @@ import { ProductListComponent } from './components/product/product-list/product-
     HttpClientModule,
     FormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'pt-BR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
