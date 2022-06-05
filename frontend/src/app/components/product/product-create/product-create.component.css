@@ -1,0 +1,14 @@
+.container {
+  background-color: rgba(80, 80, 80, 0.589);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
