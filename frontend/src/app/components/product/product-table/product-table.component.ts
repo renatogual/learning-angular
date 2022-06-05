@@ -24,4 +24,10 @@ export class ProductTableComponent implements OnInit {
   navigateToProductUpdate(id: number) {
     this.router.navigate([`/products/update/${id}`]);
   }
+
+  deleteProduct(id: string) {
+    this.productService.delete(id).subscribe(() => {
+      this.productService.showMessage('Produto excluído com sucesso!');
+    })
+  }
 }
